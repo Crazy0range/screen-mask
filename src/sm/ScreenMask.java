@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,12 +12,7 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JRootPane;
-
-import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
 
 public class ScreenMask extends JFrame implements MouseListener,
 		MouseMotionListener {
@@ -34,7 +30,6 @@ public class ScreenMask extends JFrame implements MouseListener,
 	private boolean down = false;
 	private boolean left = false;
 	private boolean right = false;
-	private boolean drag = false;
 	private static int NORTH = 0;
 	private static int EAST = 1;
 	private static int WEST = 2;
@@ -44,8 +39,6 @@ public class ScreenMask extends JFrame implements MouseListener,
 	private static int NORTH_WEST = 6;
 	private static int SOUTH_EAST = 7;
 	private static int SOUTH_WEST = 8;
-	private Point lastPoint = null;
-	private Point draggingAnchor = null;
 	private JLabel label;
 
 	public static void main(String[] args) {
@@ -207,7 +200,6 @@ public class ScreenMask extends JFrame implements MouseListener,
 			down = false;
 			left = false;
 			right = false;
-			drag = true;
 
 		}
 	}
